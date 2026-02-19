@@ -44,14 +44,14 @@ public class LeafGround {
 
 	}
 
-	// Test Case 3: Disabled Textbox
+	// Test Case 3- Disabled Textbox
 	@Test
 	public void testDisabledTextbox() {
 		WebElement disabledBox = driver.findElement(By.id("j_idt88:j_idt93"));
 		System.out.println("Is disabled: " + !disabledBox.isEnabled());
 	}
 
-	// Test Case 4: Clear Textbox
+	// Test Case 4-Clear Textbox
 	@Test
 	public void testClearTextbox() {
 		WebElement clearBox = driver.findElement(By.id("j_idt88:j_idt95"));
@@ -60,7 +60,7 @@ public class LeafGround {
 		System.out.println("After clear, value: " + clearBox.getAttribute("value"));
 	}
 
-	// Test Case 6: TAB Functionality
+	// Test Case 6- TAB Functionality
 	@Test
 	public void testTabFunction() {
 		WebElement emailBox = driver.findElement(By.id("j_idt88:j_idt99"));
@@ -70,13 +70,65 @@ public class LeafGround {
 		System.out.println("Active element after TAB: " + nextField.getTagName());
 	}
 
-	// Test Case 9: Mandatory Age Validation
+	// Test Case 9- Mandatory Age Validation
 	@Test
 	public void testAgeValidation() {
 		WebElement ageBox = driver.findElement(By.id("j_idt106:thisform:age"));
 		ageBox.sendKeys(Keys.ENTER);
 		WebElement errorMsg = driver.findElement(By.className("ui-message-error-detail"));
 		System.out.println("Error displayed: " + errorMsg.isDisplayed());
+	}
+
+	// Test Case 10- Verify label position change
+	@Test
+	public void testLabelPosition() {
+		WebElement textbox = driver.findElement(By.id("j_idt106:float-input"));
+		String before = textbox.getAttribute("placeholder");
+
+		textbox.click();
+
+		String after = textbox.getAttribute("placeholder");
+		System.out.println(" Print the Placeholder Text before click");
+		System.out.println(" Print the Placeholder Text after click");
+
+	}
+
+	// Test Case 11-Verify autocomplete selection
+	@Test
+	public void autoComplete() throws InterruptedException {
+		driver.findElement(By.id("j_idt106:auto-complete_input")).sendKeys("Test");
+		Thread.sleep(2000);
+
+	}
+
+	// Test Case 12- Verify Date selection
+	@Test
+	public void dateSelection() {
+		
+	}
+
+	// Test Case 13-Verify spinner value change
+	@Test
+		public void SpinnerValue() {
+		
+	}
+
+	// Test Case 14-Verify slider movement
+	@Test
+			public void slidermovement() {
+		
+		
+	}
+
+	// Test Case 15-Verify keyboard popup
+	@Test
+				public void keyboardPopup() {
+		
+	}
+
+	// Test Case 16-Verify custom toolbar editor
+	@Test
+	public void CustomToolbar() {
 	}
 
 }
